@@ -8,5 +8,5 @@ Link for the book is: https://cses.fi/book/book.pdf
 
 All Credits goes to the original author of the book Antti Laaksonen.
 
-MIT Licencse, Feel Free to use the implementation
+MIT License, Feel Free to use the implementation
 ```
