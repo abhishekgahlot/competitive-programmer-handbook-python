@@ -33,3 +33,6 @@ def binary_search(arr, elem, prim_index = 0):
 print binary_search(arr, 9)
 print binary_search(arr, 5)
 print binary_search(arr, 3)
+
+
+# Upper Bound and Lower Bound Python
