@@ -8,10 +8,47 @@ print arr
 
 # Merge Sort
 arr = [1, 3, 8, 2, 9, 2, 5, 6]
+def merge_sort(arr):
+  if len(arr) <= 1:
+    return arr
+  middle = len(arr) // 2
+  left = arr[:middle]
+  right = arr[middle:]
+  sleft = merge_sort(left)
+  sright = merge_sort(right)
+  return merge(sleft, sright)
 
+def merge(left, right):
+  result = []
+  while (left and right):
+    if left[0] < right[0]:
+      result.append(left[0])
+      left.pop(0)
+    else:
+      result.append(right[0])
+      right.pop(0)
+  if left:
+    result += left
+  if right:
+    result += right
+  return result
 
 # Counting Sort
-
+def counting_sort(arr, max_val):
+    count_arr = [0] * (max_val + 1)
+    for num in arr:
+        count_arr[num] += 1    
+    for i in range(1, len(count_arr)):
+        count_arr[i] += count_arr[i - 1]
+    output_arr = [0] * len(arr)
+    i = len(arr) - 1
+    while i >= 0:
+        curr_ele = arr[i]
+        count_arr[curr_ele] -= 1
+        new_pos = count_arr[curr_ele]
+        output_arr[new_pos] = curr_ele
+        i -= 1
+    return output_arr
 
 # Sorting functions in Python
 arr = [1, 3, 8, 2, 9, 2, 5, 6]
